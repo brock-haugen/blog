@@ -1,11 +1,11 @@
 import Markdown from "markdown-to-jsx";
 import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
-import { render } from "react-dom";
+import { hydrate, render } from "react-dom";
 import { HeadProvider, Title } from "react-head";
 
-import home from "./posts/_home.md";
-import posts from "./posts/_index";
+import readme from "../README.md";
+import posts from "./posts";
 
 posts.sort((a, b) => (a.data.date > b.data.date ? 1 : -1));
 
@@ -21,7 +21,7 @@ const Post = ({ content, data }) => (
   </div>
 );
 
-const App = () => (
+export const App = () => (
   <Router>
     <Switch>
       {posts.map(({ content, data }) => (
@@ -31,7 +31,7 @@ const App = () => (
       ))}
       <Route path="/">
         <div className="markdown-body">
-          <Markdown>{home.content}</Markdown>
+          <Markdown>{readme.content}</Markdown>
 
           <hr />
           <h3>Recent Posts</h3>
@@ -46,4 +46,9 @@ const App = () => (
   </Router>
 );
 
-render(<App />, document.getElementById("root"));
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
+} else {
+  render(<App />, rootElement);
+}
