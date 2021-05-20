@@ -23,8 +23,8 @@ export default () => (
 
           <hr />
           <h3>Recent Posts</h3>
-          {posts.map((p) => (
-            <Link key={p.data.slug} to={p.data.slug}>
+          {posts.filter(p => !p.data.draft).map((p) => (
+            <Link key={p.data.slug} to={p.data.slug} style={{display: "block"}}>
               {p.data.title} <small>({p.data.date})</small>
             </Link>
           ))}
