@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { HeadProvider, Title } from "react-head";
 import Markdown from "markdown-to-jsx";
 
-export default ({ content, data }) => (
-  <div className="post markdown-body">
-    <HeadProvider>
-      <Title>{data.title}</Title>
-    </HeadProvider>
+export default ({ content, data }) => {
+  useEffect(() => {
+    window.hljs.highlightAll();
+  }, []);
 
-    <Link to="/">Home</Link>
+  return (
+    <div className="post markdown-body">
+      <HeadProvider>
+        <Title>{data.title}</Title>
+      </HeadProvider>
 
-    <Markdown>{content}</Markdown>
-  </div>
-);
+      <Link to="/">Home</Link>
+
+      <Markdown>{content}</Markdown>
+    </div>
+  );
+};
