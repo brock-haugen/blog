@@ -1,16 +1,10 @@
 ---
 title: OAuth in Node.js
+date: 2021-05-21
 ---
 
-# OAuth in Node.js
+So apparently there's no simple, straightforward way to implement OAuth in Node.js. There are some libraries that do a lot of the work, but many implementations rely on a 3rd party server actually generating the tokens (e.g. [Okta](https://developer.okta.com/docs/concepts/oauth-openid/)). This is a quick guide on my implementation of a self-service solution for generating and authenticating OAuth tokens. Specifically, this will be using Node.js, Express.js, and the `client_credentials` grant type.
 
-<div class="inline-wrapper">
-  <div>
-  So apparently there's no simple, straightforward way to implement OAuth in Node.js. There are some libraries that do a lot of the work, but many implementations rely on a 3rd party server actually generating the tokens (e.g. [Okta](https://developer.okta.com/docs/concepts/oauth-openid/)). This is a quick guide on my implementation of a self-service solution for generating and authenticating OAuth tokens. Specifically, this will be using Node.js, Express.js, and the `client_credentials` grant type.
-  </div>
-  <img src="https://i1.sndcdn.com/artworks-000453910350-ykk9ma-t500x500.jpg" style="max-width: 200px" />
-</div>
-  
 If you need a primer on what OAuth is and why/when you should use it, head over to [https://oauth.net/2/](https://oauth.net/2/). For another perspective, check out [this guide from LogRocket](https://blog.logrocket.com/implementing-oauth-2-0-in-node-js/).
 
 Before we start, a disclaimer: **DO NOT COPY PASTE THIS FOR PRODUCTION USE**. This is only meant for illustrative purposes and should be augmented for any "real" uses to include a database, environment variables, logging, etc, etc.

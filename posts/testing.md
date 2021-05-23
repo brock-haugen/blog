@@ -1,8 +1,7 @@
 ---
 title: Test Post
+# date: 2021-05-18
 ---
-
-# testing
 
 ```javascript
 const run = () => {
