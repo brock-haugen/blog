@@ -1,9 +1,0 @@
----
-title: On Blogging
-date: 2021-05-19
-draft: true
----
-
-Really, this is a post about what the heck I'm doing here - and the answer is unclear. I have no target audience (and don't actually assume anyone will read these), which really means I'm writing into the void. And that is totally fine.
-
-This is merely a first stab at actually articulating my own thoughts for my own self; a purely selfish endeavor. I've been spent years collecting ideas, thoughts, and experiences (I like "perspective") and haven't really documented any of that. So here's to "blogging" 🍻
