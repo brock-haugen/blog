@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
+import Image from "next/image";
 
 import { getAllPosts, getPostBySlug } from "../../lib/posts";
 import Header from "../../components/Header";
@@ -18,6 +19,13 @@ export default function Post({ post, preview }) {
       ) : (
         <>
           <Header {...post} />
+          {post.image && <div style={{
+            paddingBottom: "40%",
+            position: "relative",
+            width: "100%"}}
+          >
+            <Image src={post.image} layout="fill" objectFit="contain" objectPosition="center" />
+           </div>}
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </>
       )}
@@ -27,13 +35,11 @@ export default function Post({ post, preview }) {
 
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
     "content",
-    "ogImage",
-    "coverImage",
+    "date",
+    "image",
+    "slug",
+    "title",
   ]);
   const content = await markdownToHtml(post.content || "");
 

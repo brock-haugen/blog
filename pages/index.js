@@ -31,7 +31,7 @@ export default function HomePage({ posts }) {
       <h3>Recent Posts</h3>
       {posts.slice(0, 5).map((p) => (
         <div key={p.slug}>
-          <Link href={`/posts/${p.slug}`}>{p.title}</Link>
+          <Link href={`/posts/${p.slug}`}>{`${new Date(p.date).toLocaleDateString()} - ${p.title}`}</Link>
         </div>
       ))}
     </>
