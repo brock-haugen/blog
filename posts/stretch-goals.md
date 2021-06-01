@@ -24,6 +24,20 @@ Running (🥁) list of far reaching goals of phyiscal endurance.
   - London
   - NYC
   - Tokyo
+- [Antarctica Marathon](https://www.marathontours.com/races/antarctica-marathon-and-half-386)
+- [Australian Outback Marathon](https://australianoutbackmarathon.com/)
+- [Crater Lake Rim Marathon](http://www.craterlakerimruns.com/?RL=1)
+- [Disney World Marathon](https://www.rundisney.com/events/disneyworld/disneyworld-marathon-weekend/)
+- [ET Full Moon 51k](http://calicoracing.com/events/et-full-moon/)
+- [FWD North Pole Marathon](https://www.npmarathon.com/)
+- [Inca Trail Marathon](https://www.andesadventures.com/run2asum.htm) - "The Most Difficult Marathon in the World"
+- [Lewa Safari Marathon](https://www.lewasafarimarathon.com/)
+- [Midnight Sun Marathon](https://www.msm.no/en/arrangement/midnight-sun-marathon/)
+- [Patagonian International Marathon](https://www.patagonianinternationalmarathon.com/en/about/)
+- [Petra Desert Marathon](https://petra-desert-marathon.com/)
+- [Pikes Peak Marathon](https://www.pikespeakmarathon.org/)
+- [Rock 'n' Roll Las Vegas](https://www.runrocknroll.com/las-vegas) \*
+- [Victoria Falls Marathon](https://www.vicfallsmarathon.com/)
 
 ## Mountains
 
