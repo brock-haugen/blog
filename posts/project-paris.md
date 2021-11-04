@@ -18,6 +18,16 @@ image: /images/drrt.jpeg
   - Includes an `api` for checking sync status
   - Data is stored in `mongodb`
 
+## Nov 4th, 2021
+
+I've added [`pm2`](https://pm2.keymetrics.io/) and [Sentry](https://sentry.io) to the worker and deployed it in "production" (aka on a local RPI server also running IPFS as a daemon service).
+
+With this, we're now getting pretty clean error reporting and performance metrics (although only 5% of events are sampled for performance to stay within the free tier at Sentry 🤘).
+
+![](/images/paris_sentry.png)
+
+Separately, the geth service seems to have managed to take down the RPI that its running on. I'm continuing to fight geth memory management (I think?) and am not sure the next steps here.
+
 ## Oct 27th, 2021: Catching up
 
 This is the first date that I actually added anything to this blog post, so everything previous is terribly succinct (and probably wouldn't have been followable anyhow).

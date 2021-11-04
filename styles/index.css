@@ -17,6 +17,10 @@ a:visited {
   padding: 45px;
 }
 
+.container p > img {
+  max-width: 100%;
+}
+
 .remark-highlight > pre {
   border-radius: 3px;
 }
