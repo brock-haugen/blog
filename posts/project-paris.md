@@ -7,16 +7,52 @@ image: /images/drrt.jpeg
 
 ### tl;dr
 
-#### Current State
+#### Current State (Nov 29th, 2021)
 
-- Working geth node in Digital Ocean
-  - Hoping to replace it with a private node on a Raspberry PI soon
-- Anything Firebase related is paused
-- New `server` codebase in the works
-  - Includes a `worker` for syncing
-    - queues are implemented with Redis + Bull.js
-  - Includes an `api` for checking sync status
-  - Data is stored in `mongodb`
+- ETH (geth) nodes
+  - "Primary" one running on laptop in the office
+  - "Secondary" one syncing on a $80/m Digital Ocean server (intended to be used for backfill)
+  - Replacement for the laptop on its way as a powerful desktop (16 core, 64 GB RAM)
+- 2 Raspberry Pis running workers to sync blocks, collections, and metadata in "realtime"
+- 1 Heroku instance running the API / GraphQL setup
+  - Also includes an image compression endpoint
+  - GraphQL endpoints are protected by _really_ basic header auth
+- All data stored in a hosted (Atlas) Mongodb instance
+- Queuing via a hosted (Digital Ocean) Redis instance
+- Base set of UI components exposed via npm - [@bridgetown-collective/paris](https://www.npmjs.com/package/@bridgetown-collective/paris)
+  - Currently in use for a secret "Secret Santa" project
+- Stood up ipfs.bridgetowncollective.com in anticipation of productionalizing the system
+- Paris has a basic UI that can be reached at the paris.bridgetowncollective.com domain
+  - e.g. [a lizard of mine](https://paris.bridgetowncollective.com/nfts/0x9048de699869385756939a7bb0a22b6d6cb63a83/743)
+
+## Nov 29th, 2021
+
+The laptop geth node has been notably stable (except when I tried to backfill ETH data and overloaded it...). That coupled with a single RPI instance seem to be easily capable of keeping up with incoming blocks / NFT transfers.
+
+Of other note, there is now an official [NPM package](https://www.npmjs.com/package/@bridgetown-collective/paris) for Paris 🎉. This is a very early stage to this so breaking changes are expected. Currently can be used as follows:
+
+```javascript
+import { NFTCard } from "@bridgetown-collective/paris";
+
+...
+
+const Component = () => {
+  ...
+  return (
+    ...
+    <NFTCard contractAddress="0x9048de699869385756939a7bb0a22b6d6cb63a83" tokenId="743" />
+    ...
+  );
+}
+```
+
+The above will handle loading the NFT data from Paris, auto refreshing the metadata if none is found, requesting the NFT iamge, and displaying all the information on screen.
+
+## Nov 8th, 2021
+
+The RPI geth node is still trying to sync, but is at least auto-restarting itself as needed. As a backup though, Ubuntu is now install on an old Dell XPS 13 (a fantastic development laptop) and a secondary geth node is fully synced there. Which means the local `worker` is also pointed at the XPS and I'm able to take my public geth node offline - we're fully private now 🤘
+
+Side note, service worked great for turning off the laptop screen without putting the computer to sleep: [https://askubuntu.com/questions/1244358/ubuntu-20-04-server-turn-off-screen-until-i-press-a-key](https://askubuntu.com/questions/1244358/ubuntu-20-04-server-turn-off-screen-until-i-press-a-key).
 
 ## Nov 4th, 2021
 
