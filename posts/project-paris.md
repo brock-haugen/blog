@@ -2,7 +2,7 @@
 title: Project Paris
 date: 2021-10-27
 tags: Bridgetown Collective, projects, NFTs, blockchain
-image: /images/drrt.jpeg
+image: /images/drrt.jpg
 ---
 
 ### tl;dr

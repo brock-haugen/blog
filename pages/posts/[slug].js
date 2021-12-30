@@ -1,12 +1,11 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Image from "next/image";
 
 import { getAllPosts, getPostBySlug } from "../../lib/posts";
 import Header from "../../components/Header";
 import markdownToHtml from "../../lib/markdown";
 
-export default function Post({ post, preview }) {
+export default function Post({ post }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -30,11 +29,22 @@ export default function Post({ post, preview }) {
                   width: "100%",
                 }}
               >
-                <Image
+                <img
                   src={post.image}
-                  layout="fill"
-                  objectFit="contain"
-                  objectPosition="center"
+                  style={{
+                    display: "block",
+                    height: 0,
+                    margin: "auto",
+                    maxHeight: "100%",
+                    maxWidth: "100%",
+                    minHeight: "100%",
+                    minWidth: "100%",
+                    objectFit: "contain",
+                    objectPosition: "center center",
+                    padding: 0,
+                    position: "absolute",
+                    width: 0,
+                  }}
                 />
               </div>
             ))}
