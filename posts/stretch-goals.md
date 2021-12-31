@@ -5,7 +5,7 @@ date: 2021-05-27
 image: /images/kings_peak_utah.jpg
 ---
 
-Running (🥁) list of far reaching goals of phyiscal endurance.
+Running (:drum_with_drumsticks:) list of far reaching goals of phyiscal endurance.
 
 ## Marathons
 

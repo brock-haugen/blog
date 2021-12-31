@@ -21,7 +21,8 @@ export default function HomePage({ posts }) {
         <p>
           Written by <a href="/whoami">Brock</a> in{" "}
           <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> while
-          listening to <a href="https://poolside.fm">Poolside.FM</a>🍹
+          listening to <a href="https://poolside.fm">Poolside.FM</a>🍹. Deployed
+          via <a href="https://ipfs.io">IPFS</a>.
         </p>
       </div>
 

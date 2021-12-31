@@ -29,7 +29,7 @@ image: /images/drrt.jpg
 
 The laptop geth node has been notably stable (except when I tried to backfill ETH data and overloaded it...). That coupled with a single RPI instance seem to be easily capable of keeping up with incoming blocks / NFT transfers.
 
-Of other note, there is now an official [NPM package](https://www.npmjs.com/package/@bridgetown-collective/paris) for Paris 🎉. This is a very early stage to this so breaking changes are expected. Currently can be used as follows:
+Of other note, there is now an official [NPM package](https://www.npmjs.com/package/@bridgetown-collective/paris) for Paris :tada:. This is a very early stage to this so breaking changes are expected. Currently can be used as follows:
 
 ```javascript
 import { NFTCard } from "@bridgetown-collective/paris";
@@ -50,7 +50,7 @@ The above will handle loading the NFT data from Paris, auto refreshing the metad
 
 ## Nov 8th, 2021
 
-The RPI geth node is still trying to sync, but is at least auto-restarting itself as needed. As a backup though, Ubuntu is now install on an old Dell XPS 13 (a fantastic development laptop) and a secondary geth node is fully synced there. Which means the local `worker` is also pointed at the XPS and I'm able to take my public geth node offline - we're fully private now 🤘
+The RPI geth node is still trying to sync, but is at least auto-restarting itself as needed. As a backup though, Ubuntu is now install on an old Dell XPS 13 (a fantastic development laptop) and a secondary geth node is fully synced there. Which means the local `worker` is also pointed at the XPS and I'm able to take my public geth node offline - we're fully private now :the_horns:
 
 Side note, service worked great for turning off the laptop screen without putting the computer to sleep: [https://askubuntu.com/questions/1244358/ubuntu-20-04-server-turn-off-screen-until-i-press-a-key](https://askubuntu.com/questions/1244358/ubuntu-20-04-server-turn-off-screen-until-i-press-a-key).
 
