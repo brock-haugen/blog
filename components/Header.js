@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 
 export default function Headers({ date, ogImage, title }) {
   return (
@@ -10,7 +9,7 @@ export default function Headers({ date, ogImage, title }) {
       </Head>
 
       <div>
-        <Link href="/">Home</Link>
+        <a href="/">Home</a>
       </div>
 
       <h1 className="title">{title}</h1>

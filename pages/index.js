@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
 
 import { getAllPosts } from "../lib/posts";
-import Header from "../components/Header";
 
 export default function HomePage({ posts }) {
   return (
@@ -32,16 +30,18 @@ export default function HomePage({ posts }) {
       <h3>Recent Posts</h3>
       {posts.slice(0, 5).map((p) => (
         <div key={p.slug}>
-          <Link href={`/posts/${p.slug}`}>{`${new Date(
-            p.date,
-          ).toLocaleDateString()} - ${p.title}`}</Link>
+          <a
+            href={`/posts/${p.slug}${
+              process.env.NODE_ENV === "development" ? "" : ".html"
+            }`}
+          >{`${new Date(p.date).toLocaleDateString()} - ${p.title}`}</a>
         </div>
       ))}
     </>
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const posts = getAllPosts(["title", "slug"]);
 
   return {
